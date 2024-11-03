@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Chatbot Menu</h2>
+            <button id="newChatBtn" class="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                New Chat
+            </button>
+            <div id="chatHistory" class="chat-history">
+                <h3>Sohbet Geçmişi</h3>
+                <!-- Chat history will be inserted here -->
+            </div>
+            <button id="settingsBtn" class="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                Ayarlar
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="chat-header">
+                <h2>Advanced AI Chat</h2>
+                <button id="loginButton" class="login-button">Oturum Aç</button>
+            </div>
+            
+            <div id="chatMessages" class="chat-messages">
+                <!-- Messages will be inserted here -->
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendBtn" class="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert -->
+    <div id="customAlert" class="custom-alert">
+        <div class="alert-content">
+            <p id="alertMessage"></p>
+            <div class="alert-buttons">
+                <button id="alertConfirm">Tamam</button>
+                <button id="alertCancel">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Oturum Aç</h2>
+            <input type="text" id="loginEmail" placeholder="E-posta veya Kullanıcı Adı">
+            <input type="password" id="loginPassword" placeholder="Şifre">
+            <button id="loginSubmit">Oturum Aç</button>
+            <button id="googleLogin" class="social-login">Google ile Oturum Aç</button>
+            <button id="microsoftLogin" class="social-login">Microsoft ile Oturum Aç</button>
+            <button id="githubLogin" class="social-login">GitHub ile Oturum Aç</button>
+            <p id="loginError" class="error-message"></p>
+            <p class="register-link">Hesabınız yok mu? <a href="#" id="registerLink">Oluşturun</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div calass="modal-content">
+            <h2>Hesap Oluştur</h2>
+            <input type="text" id="registerUsername" placeholder="Kullanıcı Adı">
+            <input type="email" id="registerEmail" placeholder="E-posta">
+            <input type="password" id="registerPassword" placeholder="Şifre">
+            <button id="registerSubmit">Kayıt Ol</button>
+            <button id="googleRegister" class="social-login">Google ile Kayıt Ol</button>
+            <button id="microsoftRegister" class="social-login">Microsoft ile Kayıt Ol</button>
+            <button id="githubRegister" class="social-login">GitHub ile Kayıt Ol</button>
+            <p id="registerError" class="error-message"></p>
+        </div>
+    </div>
+
+    <script type="module" src="responses.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
